@@ -31,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity {
 
 
         // 회원가입 버튼 클릭 수행
-        Button bt_register = findViewById(R.id.bt_register_reg);
+        /*Button bt_register = findViewById(R.id.bt_register_reg);
         bt_register.setOnClickListener(v -> {
             String userID = et_id.getText().toString();
             String userPassword = et_pw.getText().toString();
@@ -62,7 +62,7 @@ public class RegisterActivity extends AppCompatActivity {
             RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userName, "남", "20", responseListener);
             RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
             queue.add(registerRequest);
-        });
+        });*/
 
         // 취소 버튼 클릭 수행
         Button bt_cancel = findViewById(R.id.bt_cancel_reg);
