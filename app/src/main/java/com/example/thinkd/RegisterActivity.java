@@ -3,7 +3,6 @@ package com.example.thinkd;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.DialogInterface;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -86,6 +85,8 @@ public class RegisterActivity extends AppCompatActivity {
             } else if (spinnerValue.equals("")) {
                 syhDialog(getString(R.string.popup_empty_age), getString(R.string.register_failed));
             } else {
+                Toast.makeText(getApplicationContext(), "미구현 기능입니다", Toast.LENGTH_SHORT).show();
+                
                 Response.Listener<String> responseListener = response -> {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
@@ -95,14 +96,13 @@ public class RegisterActivity extends AppCompatActivity {
                             finish();
                         } else {
                             Toast.makeText(getApplicationContext(), "회원 등록에 실패했습니다.", Toast.LENGTH_SHORT).show();
-                            return;
                         }
                     } catch (JSONException e) {
                         e.printStackTrace();
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userName, "남", "20", responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userName, radioValue, spinnerValue, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
             }

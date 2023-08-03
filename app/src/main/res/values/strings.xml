@@ -19,4 +19,5 @@
     <string name="popup_empty_gender">성별을 선택해주세요.</string>
     <string name="age">나이</string>
     <string name="popup_empty_age">나이를 선택해주세요</string>
+    <string name="login_failed">로그인 실패</string>
 </resources>
