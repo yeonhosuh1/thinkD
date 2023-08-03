@@ -10,7 +10,7 @@
         android:id="@+id/tv_register"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="74dp"
+        android:layout_marginTop="60dp"
         android:text="@string/sign_up"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="100dp"
         android:ems="10"
         android:hint="@string/id"
         android:importantForAutofill="no"
@@ -145,12 +145,14 @@
             android:id="@+id/rbt_men"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:text="@string/men" />
 
         <RadioButton
             android:id="@+id/rbt_women"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
             android:text="@string/women" />
     </RadioGroup>
 
@@ -174,5 +176,25 @@
         app:layout_constraintBottom_toBottomOf="@+id/bt_register_reg"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/bt_register_reg" />
+
+    <TextView
+        android:id="@+id/tv_age"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/age"
+        app:layout_constraintBottom_toBottomOf="@+id/spin_age"
+        app:layout_constraintEnd_toStartOf="@+id/spin_age"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/spin_age" />
+
+    <Spinner
+        android:id="@+id/spin_age"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:minHeight="48dp"
+        app:layout_constraintEnd_toEndOf="@+id/group_gender"
+        app:layout_constraintStart_toStartOf="@+id/group_gender"
+        app:layout_constraintTop_toBottomOf="@+id/group_gender" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
