@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -35,6 +36,14 @@ public class CafeKioskActivity extends AppCompatActivity {
         );
 
         final Button addToCartButton = findViewById(R.id.button6);
+
+        // 임의로 추가한 부분~ (화면 연결을 위함)
+        final ImageButton bt_back_kiosk = findViewById(R.id.bt_back_kiosk);
+        bt_back_kiosk.setOnClickListener(v -> {
+            finish();
+        });
+        // ~추가한 부분
+
         final TextView totalTextView = findViewById(R.id.textViewTotalAmount);
         final TextView countTextView = findViewById(R.id.textViewTotalCount);
 

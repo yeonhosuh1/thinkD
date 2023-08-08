@@ -53,6 +53,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (success) {
                             Intent intent = new Intent(LoginActivity.this, HomeActivity.class);
                             startActivity(intent);
+                            finish();
                         } else {
                             Toast.makeText(getApplicationContext(), "아이디와 비밀번호가 일치하지 않습니다.", Toast.LENGTH_SHORT).show();
                         }
