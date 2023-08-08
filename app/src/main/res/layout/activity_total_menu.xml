@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/textViewTotal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="총 금액 및 수량"
+        android:textSize="24sp" />
+
+    <TextView
+        android:id="@+id/textViewTotalAmount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTotal"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="총 금액: 원"
+        android:textSize="18sp" />
+
+    <TextView
+        android:id="@+id/textViewTotalCount"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTotalAmount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="8dp"
+        android:text="총 수량: 개"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewTotalCount"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="돌아가기" />
+
+</RelativeLayout>

@@ -1,4 +1,4 @@
-package com.example.thinkd;
+package com.example.thinkd.sign;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -16,6 +16,7 @@ import android.widget.Toast;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.toolbox.Volley;
+import com.example.thinkd.R;
 import com.example.thinkd.request.RegisterRequest;
 
 import org.json.JSONException;
