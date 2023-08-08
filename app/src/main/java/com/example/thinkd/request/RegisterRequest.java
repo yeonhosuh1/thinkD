@@ -12,15 +12,15 @@ public class RegisterRequest extends StringRequest {
     final static private String URL = "http://ec2-18-190-48-55.us-east-2.compute.amazonaws.com/Register.php";
     private Map<String, String> map;
 
-    public RegisterRequest(String userID, String userPassword, String userName, String userGender, String userAge, Response.Listener<String> listener) {
+    public RegisterRequest(String id, String password, String name, String userGender, String age, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
-        map.put("userID", userID);
-        map.put("userPassword", userPassword);
-        map.put("userName", userName);
+        map.put("id", id);
+        map.put("password", password);
+        map.put("name", name);
         map.put("userGender", userGender);
-        map.put("userAge", userAge);
+        map.put("age", age);
     }
 
     @Override

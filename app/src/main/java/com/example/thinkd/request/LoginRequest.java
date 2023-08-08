@@ -12,12 +12,12 @@ public class LoginRequest extends StringRequest {
     final static private String URL = "http://ec2-18-190-48-55.us-east-2.compute.amazonaws.com/Login.php";
     private Map<String, String> map;
 
-    public LoginRequest(String userID, String userPassword, Response.Listener<String> listener) {
+    public LoginRequest(String id, String password, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
 
         map = new HashMap<>();
-        map.put("userID", userID);
-        map.put("userPassword", userPassword);
+        map.put("id", id);
+        map.put("password", password);
     }
 
     @Override

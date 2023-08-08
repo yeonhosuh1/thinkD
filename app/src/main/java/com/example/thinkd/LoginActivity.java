@@ -32,16 +32,14 @@ public class LoginActivity extends AppCompatActivity {
 
         Button bt_login = findViewById(R.id.bt_login);
         bt_login.setOnClickListener(v -> {
-            String userID = et_id.getText().toString();
-            String userPassword = et_pw.getText().toString();
+            String id = et_id.getText().toString();
+            String password = et_pw.getText().toString();
 
-            if (userID.equals("")) {
+            if (id.equals("")) {
                 syhDialog(getString(R.string.popup_empty_id), getString(R.string.login_failed));
-            } else if (userPassword.equals("")) {
+            } else if (password.equals("")) {
                 syhDialog(getString(R.string.popup_empty_pw), getString(R.string.login_failed));
             } else {
-                Toast.makeText(getApplicationContext(), "미구현 기능입니다", Toast.LENGTH_SHORT).show();
-
                 Response.Listener<String> responseListener = response -> {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
@@ -57,7 +55,7 @@ public class LoginActivity extends AppCompatActivity {
                     }
                 };
 
-                LoginRequest loginRequest = new LoginRequest(userID, userPassword, responseListener);
+                LoginRequest loginRequest = new LoginRequest(id, password, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
                 queue.add(loginRequest);
             }

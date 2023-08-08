@@ -67,26 +67,24 @@ public class RegisterActivity extends AppCompatActivity {
         // 회원가입 버튼 클릭 수행
         Button bt_register = findViewById(R.id.bt_register_reg);
         bt_register.setOnClickListener(v -> {
-            String userID = et_id.getText().toString();
-            String userPassword = et_pw.getText().toString();
+            String id = et_id.getText().toString();
+            String password = et_pw.getText().toString();
             String userPwCheck = et_pwcheck.getText().toString();
-            String userName = et_name.getText().toString();
+            String name = et_name.getText().toString();
 
-            if (userID.equals("")) {
+            if (id.equals("")) {
                 syhDialog(getString(R.string.popup_empty_id), getString(R.string.register_failed));
-            } else if (userPassword.equals("")) {
+            } else if (password.equals("")) {
                 syhDialog(getString(R.string.popup_empty_pw), getString(R.string.register_failed));
-            } else if (!userPassword.equals(userPwCheck)) {
+            } else if (!password.equals(userPwCheck)) {
                 syhDialog(getString(R.string.popup_diff_pwcheck), getString(R.string.register_failed));
-            } else if (userName.equals("")) {
+            } else if (name.equals("")) {
                 syhDialog(getString(R.string.popup_empty_name), getString(R.string.register_failed));
             } else if (radioValue.equals("")) {
                 syhDialog(getString(R.string.popup_empty_gender), getString(R.string.register_failed));
             } else if (spinnerValue.equals("")) {
                 syhDialog(getString(R.string.popup_empty_age), getString(R.string.register_failed));
             } else {
-                Toast.makeText(getApplicationContext(), "미구현 기능입니다", Toast.LENGTH_SHORT).show();
-                
                 Response.Listener<String> responseListener = response -> {
                     try {
                         JSONObject jsonObject = new JSONObject(response);
@@ -102,7 +100,7 @@ public class RegisterActivity extends AppCompatActivity {
                     }
                 };
 
-                RegisterRequest registerRequest = new RegisterRequest(userID, userPassword, userName, radioValue, spinnerValue, responseListener);
+                RegisterRequest registerRequest = new RegisterRequest(id, password, name, radioValue, spinnerValue, responseListener);
                 RequestQueue queue = Volley.newRequestQueue(RegisterActivity.this);
                 queue.add(registerRequest);
             }
