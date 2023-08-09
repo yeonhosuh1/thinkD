@@ -15,9 +15,15 @@
         android:theme="@style/Theme.ThinkD"
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
-        <!--<activity
+
+        <meta-data
+            android:name="com.google.android.geo.API_KEY"
+            android:value="AIzaSyDkk3xTv3xg73VqabaesHEERjknBfFB26g" />
+
+        <activity
             android:name=".MapActivity"
-            android:exported="false" /> -->
+            android:exported="false" />
+
         <activity
             android:name=".menu.CafeKioskActivity"
             android:exported="false" />
