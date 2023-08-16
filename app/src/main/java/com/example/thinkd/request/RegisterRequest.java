@@ -10,7 +10,7 @@ import java.util.Map;
 public class RegisterRequest extends StringRequest {
 
     final static private String URL = "http://ec2-18-190-48-55.us-east-2.compute.amazonaws.com/Register.php";
-    private Map<String, String> map;
+    private final Map<String, String> map;
 
     public RegisterRequest(String id, String password, String name, String gender, String age, Response.Listener<String> listener) {
         super(Method.POST, URL, listener, null);
