@@ -58,9 +58,9 @@ public class RegisterActivity extends AppCompatActivity {
 
         radioGroup.setOnCheckedChangeListener((group, checkedId) -> {
             if (checkedId == R.id.rbt_men) {
-                radioValue = "men";
+                radioValue = "M";
             } else if (checkedId == R.id.rbt_women) {
-                radioValue = "women";
+                radioValue = "W";
             }
         });
 
