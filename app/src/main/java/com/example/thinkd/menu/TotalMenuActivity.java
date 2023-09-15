@@ -1,10 +1,11 @@
 package com.example.thinkd.menu;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.example.thinkd.R;
@@ -20,18 +21,26 @@ public class TotalMenuActivity extends AppCompatActivity {
         double totalAmount = intent.getDoubleExtra("totalAmount", 0.0);
         int totalCount = intent.getIntExtra("totalCount", 0);
 
-        TextView totalAmountTextView = findViewById(R.id.textViewTotalAmount);
-        TextView totalCountTextView = findViewById(R.id.textViewTotalCount);
+        ImageView closeButton = findViewById(R.id.closeButton);
+        closeButton.setOnClickListener(view -> {
+            finish();
+        });
 
-        totalAmountTextView.setText("총 금액: " + totalAmount + " 원");
-        totalCountTextView.setText("총 수량: " + totalCount + " 개");
 
-        Button backButton = findViewById(R.id.buttonBack);
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish(); // 현재 액티비티 종료하여 이전 화면으로 돌아가기
-            }
+        Button bt_usePoint = findViewById(R.id.bt_pointUse);
+        TextView tvPoint = findViewById(R.id.tv_point);
+        TextView tvTotalPrice = findViewById(R.id.tv_totalPrice);
+        TextView tvUsedPoint = findViewById(R.id.tv_usedPoint);
+        bt_usePoint.setOnClickListener(view -> {
+            tvPoint.setText("10000원");
+            tvTotalPrice.setText("5000원");
+            tvUsedPoint.setText("-10000원");
+        });
+
+        TextView tv_orderBtn = findViewById(R.id.tv_orderBtn);
+        tv_orderBtn.setOnClickListener(v -> {
+            Intent intent1 = new Intent(TotalMenuActivity.this, OrderCompleteActivity.class);
+            startActivity(intent1);
         });
     }
 }
