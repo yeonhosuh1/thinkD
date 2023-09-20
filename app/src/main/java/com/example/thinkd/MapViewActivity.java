@@ -8,16 +8,18 @@ import android.os.Bundle;
 import android.widget.MediaController;
 import android.widget.VideoView;
 
-public class ARActivity extends AppCompatActivity {
+import com.example.thinkd.menu.CafeKioskActivity;
+
+public class MapViewActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_aractivity);
+        setContentView(R.layout.activity_map_view);
 
-        VideoView videoView = findViewById(R.id.videoView);
+        VideoView videoView = findViewById(R.id.vv_map);
 
-        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.arvideo;
+        String videoPath = "android.resource://" + getPackageName() + "/" + R.raw.mapvideo;
 
         videoView.setVideoURI(Uri.parse(videoPath));
 
@@ -26,7 +28,7 @@ public class ARActivity extends AppCompatActivity {
         mediaController.setAnchorView(videoView);
 
         videoView.setOnCompletionListener(mp -> {
-            Intent intent = new Intent(ARActivity.this, HomeActivity.class);
+            Intent intent = new Intent(MapViewActivity.this, CafeKioskActivity.class);
             startActivity(intent);
             finish();
         });

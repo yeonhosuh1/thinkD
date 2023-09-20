@@ -17,7 +17,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Button bt_map = findViewById(R.id.buttonMap);
         bt_map.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+            Intent intent = new Intent(getApplicationContext(), MapViewActivity.class);
             startActivity(intent);
         });
 

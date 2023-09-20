@@ -4,10 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ARActivity">
+    tools:context=".MapViewActivity">
 
     <VideoView
-        android:id="@+id/videoView"
+        android:id="@+id/vv_map"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         app:layout_constraintEnd_toEndOf="parent"
