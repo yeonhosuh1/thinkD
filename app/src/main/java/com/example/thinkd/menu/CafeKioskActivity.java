@@ -84,7 +84,7 @@ public class CafeKioskActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // TotalMenuActivity로 전환하는 코드 추가
-                Intent intent = new Intent(CafeKioskActivity.this, TotalMenuActivity.class);
+                Intent intent = new Intent(CafeKioskActivity.this, PayInformActivity.class);
                 intent.putExtra("totalAmount", totalAmount);
                 intent.putExtra("totalCount", count);
                 startActivity(intent);
@@ -92,16 +92,13 @@ public class CafeKioskActivity extends AppCompatActivity {
         });
 
         final Button cancelButton = findViewById(R.id.button5);
-        cancelButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                // 일괄 취소 시 수행할 동작 추가
-                totalAmount = 0.0;
-                count = 0;
+        cancelButton.setOnClickListener(v -> {
+            // 일괄 취소 시 수행할 동작 추가
+            totalAmount = 0.0;
+            count = 0;
 
-                totalTextView.setText("총 금액: " + totalAmount + " 원");
-                countTextView.setText("총 수량: " + count + " 개");
-            }
+            totalTextView.setText("총 금액: " + totalAmount + " 원");
+            countTextView.setText("총 수량: " + count + " 개");
         });
     }
 

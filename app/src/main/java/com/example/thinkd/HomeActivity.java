@@ -6,7 +6,7 @@ import android.widget.Button;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.thinkd.menu.CafeKioskActivity;
+import com.example.thinkd.menu.OrderInformActivity;
 
 public class HomeActivity extends AppCompatActivity {
 
@@ -23,7 +23,7 @@ public class HomeActivity extends AppCompatActivity {
 
         Button bt_kiosk = findViewById(R.id.bt_kiosk);
         bt_kiosk.setOnClickListener(view -> {
-            Intent intent = new Intent(getApplicationContext(), CafeKioskActivity.class);
+            Intent intent = new Intent(getApplicationContext(), OrderInformActivity.class);
             startActivity(intent);
         });
     }

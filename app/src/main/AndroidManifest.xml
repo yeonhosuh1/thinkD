@@ -16,6 +16,12 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".menu.PayInformActivity"
+            android:exported="false" />
+        <activity
+            android:name=".menu.OrderInformActivity"
+            android:exported="false" />
+        <activity
             android:name=".MapViewActivity"
             android:exported="false" />
         <activity
